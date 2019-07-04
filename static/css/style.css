@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', sans-serif; }
+
+nav {
+  position: relative;
+  z-index: 10; 
+}
+ 
+nav .menu_logo {
+    align-self: center;
+    position: relative; 
+}
+
+ nav .main-menu > * {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    padding: 10px; }
+	
+
+.data_manager {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  opacity: 0.3;
+  transition: 0.3s all; }
+  
+.data_manager:hover {
+    opacity: 1; 
+}
+

@@ -1,0 +1,36 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ tracks.title|title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="post-page w-100">
+        <header class="w-100 p-3">
+            <h1 class="font-weight-bold container pt-2">
+                {{ tracks.title }}
+            </h1>
+            <div class="common_inf d-flex container">
+                <p class="author mr-3">{% trans 'Author' %}</p>
+                <p>{{ tracks.data_pub }}</p>
+            </div>
+        </header>
+        <div class="post-body-wrapper mx-auto container mb-5">
+            <div class="post-desc">
+                <div class="post-body">
+                    <p class="m-0">
+                        {{ tracks.body }}
+                    </p>
+                </div>
+                <div class="post-genres mt-5">
+                    <span> genres:{% for genre in tracks.genres.all %}
+                        <a class="text-decoration-none"
+                           href="{{ genre.get_absolute_url }}">{{ genre.title }}</a>{% endfor %}</span>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

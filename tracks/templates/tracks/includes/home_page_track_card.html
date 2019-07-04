@@ -1,0 +1,12 @@
+<div class="tracks-card d-flex shadow-sm">
+    <div class="card-image border w-25 mr-3" onclick="location.href='{{ track.get_absolute_url }}'">
+    </div>
+    <div class="tracks_desc">
+        <p class="title" onclick="location.href='{{ track.get_absolute_url }}'">{{ track.title }}</p>
+        <div class="common_inf d-flex">
+            <p class="group mr-2">Group</p>
+            <p>{{ track.data_pub }}</p>
+        </div>
+        <p class="desc">{{ track.body|truncatewords:5 }}</p>
+    </div>
+</div>

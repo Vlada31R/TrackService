@@ -1,0 +1,24 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Tracks list' %} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="track-list container my-3">
+        <div class="track-genres popular-genres">
+            <h4>{% trans 'Popular theme' %}</h4>
+            {% for genre in genres %}
+                <a href="{{ genre.get_absolute_url }}" class="text-decoration-none pl-0 pr-3">{{ genre.title }}</a>
+            {% endfor %}
+		</div>
+		<div class="track-genres popular-genres">
+            <a class="text-decoration-none btn btn-outline-dark btn-sm" href="{% url "genres_list_url" %}">See more</a>
+        </div>
+        <h2 class="page-name py-2 my-3 w-75">{% trans 'Tracks' %}</h2>
+        {% for track in tracks %}
+            {% include 'tracks/includes/base_track_card.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}

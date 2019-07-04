@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Login' %} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        {% if request.user.is_authenticated %}
+            <h2 class="alert alert alert-danger">{% trans 'You have already logged in!' %}</h2>
+        {% else %}
+            <h2>{% trans 'Login' %}</h2>
+            {% if next %}
+                <h2>{% trans 'Please, login to see page!' %}</h2>
+            {% endif %}
+            <form action="{% url 'login' %}" method="post" class="mb-4">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    <div class="form-group">
+                        {% if field.errors %}
+                            <div class="alert alert-danger">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+
+                        {{ field.label }}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <div>
+                    <input type="submit"  class="btn btn-primary btn-sm" value={% trans "login"%}>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </div>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

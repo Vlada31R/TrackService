@@ -1,0 +1,18 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Delete track' %} {{ tracks.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="update_form container mx-auto text-center my-4">
+        <form action="{{ tracks.get_delete_url }}" method="post">
+            {% csrf_token %}
+            <h5 class="mb-5">{% trans 'Are you sure you wanna delete' %}<b>"{{ tracks.title }}"</b>{% trans  'genre?' %}</h5>
+            <input type="button" value="Cancel" class="btn btn-info mr-2"
+                   onclick="location.href='{{ tracks.get_absolute_url }}'">
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+    </div>
+{% endblock %}

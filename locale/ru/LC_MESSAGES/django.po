@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-27 09:29+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\ServerBlog\settings.py:100
+msgid "Український"
+msgstr "Украинский"
+
+#: .\ServerBlog\settings.py:101
+msgid "Русский"
+msgstr "Русский"
+
+#: .\accounts\templates\registration\login.html:7
+msgid "You have already logged in!"
+msgstr "Вы уже зашли в систему!"
+
+#: .\accounts\templates\registration\login.html:10
+msgid "Please, login to see page!"
+msgstr "Пожалуйста, войдите чтобы увидеть страницу!"
+
+#: .\accounts\templates\registration\login.html:28
+msgid "login"
+msgstr "Вход"
+
+#: .\blog\forms.py:20
+msgid "Tag can not be \"Create\""
+msgstr "Тег не может быть \"Create\""
+
+#: .\blog\forms.py:22
+#, python-brace-format
+msgid "Tag \"%{tag}s\" has already created"
+msgstr "Тег \"%{tag}s\" уже существует"
+
+#: .\blog\models.py:15
+msgid "title"
+msgstr "название"
+
+#: .\blog\models.py:17
+msgid "body"
+msgstr "основная часть"
+
+#: .\blog\models.py:41
+msgid "Posts"
+msgstr "Посты"
+
+#: .\blog\models.py:68 .\blog\templates\blog\tags_list.html:5
+#: .\templates\base.html:42
+msgid "Tags"
+msgstr "Теги"
+
+#: .\templates\base.html:47
+msgid "Lang"
+msgstr "Язык"
+
+#: .\blog\templates\blog\base_blog.html:8
+msgid "Admin"
+msgstr "Админ"
+
+#: .\blog\templates\blog\base_blog.html:16
+msgid "Create"
+msgstr "Создать"
+
+#: .\blog\templates\blog\base_blog.html:19
+msgid "Post"
+msgstr "Пост"
+
+#: .\blog\templates\blog\base_blog.html:20
+msgid "Tag"
+msgstr "Тег"
+
+#: .\blog\templates\blog\base_blog.html:24
+msgid "Update"
+msgstr "Обновить"
+
+#: .\blog\templates\blog\base_blog.html:25
+#: .\blog\templates\blog\post_delete.html:15
+#: .\blog\templates\blog\tag_delete.html:15
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\blog\templates\blog\home_page.html:13
+msgid "Blog"
+msgstr "Блог"
+
+#: .\blog\templates\blog\home_page.html:13
+msgid "For"
+msgstr "Для"
+
+#: .\blog\templates\blog\home_page.html:13
+msgid "The"
+msgstr "Нашего"
+
+#: .\blog\templates\blog\home_page.html:13
+msgid "Future"
+msgstr "Будущего"
+
+#: .\blog\templates\blog\home_page.html:23
+msgid "All news"
+msgstr "Все новости"
+
+#: .\blog\templates\blog\home_page.html:27 .\templates\base.html:53
+msgid "Login"
+msgstr "Вход"
+
+#: .\blog\templates\blog\home_page.html:28 .\templates\base.html:54
+msgid "Sign up"
+msgstr "Регистрациця"
+
+#: .\blog\templates\blog\index.html:6
+msgid "News list"
+msgstr "Новостной лист"
+
+#: .\blog\templates\blog\index.html:12
+msgid "Popular theme"
+msgstr "Популярные темы"
+
+#: .\blog\templates\blog\index.html:16
+msgid "See more"
+msgstr "Смотреть все"
+
+#: .\blog\templates\blog\index.html:18 .\templates\base.html:41
+msgid "News"
+msgstr "Новости"
+
+#: .\blog\templates\blog\post_create.html:6
+#: .\blog\templates\blog\post_create.html:26
+msgid "Create Post"
+msgstr "Создать Пост"
+
+#: .\blog\templates\blog\post_delete.html:5
+msgid "Delete Post"
+msgstr "Удалить Пост"
+
+#: .\blog\templates\blog\post_delete.html:12
+msgid "Are you sure you wanna delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: .\blog\templates\blog\post_delete.html:12
+#: .\blog\templates\blog\tag_detail.html:10
+msgid "tag"
+msgstr "тег"
+
+#: .\blog\templates\blog\post_update.html:5
+msgid "Edit Post"
+msgstr "Изменить Пост"
+
+#: .\blog\templates\blog\post_update.html:25
+msgid "Update Post"
+msgstr "Обновить Пост"
+
+#: .\blog\templates\blog\tag_create.html:5
+msgid "Tag Create"
+msgstr "Создать Тег"
+
+#: .\blog\templates\blog\tag_create.html:25
+msgid "Create Tag"
+msgstr "Создать Тег"
+
+#: .\blog\templates\blog\tag_delete.html:5
+msgid "Delete Tag"
+msgstr "Удалить Тег"
+
+#: .\blog\templates\blog\tag_detail.html:10
+msgid "Posts with"
+msgstr "Посты с"
+
+#: .\blog\templates\blog\tag_update.html:5
+msgid "Edit Tag"
+msgstr "Изменить Тег"
+
+#: .\blog\templates\blog\tag_update.html:25
+msgid "Update Tag"
+msgstr "Обновить Тег"
+
+#: .\templates\base.html:40
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\base.html:50
+msgid "Logout"
+msgstr "Выход"

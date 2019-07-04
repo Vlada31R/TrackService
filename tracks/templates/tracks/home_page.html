@@ -1,0 +1,19 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="home-page">
+        <section class="container home_page__example-news-list">
+				<div class="tracks-example">
+                {% for track in tracks %}
+                    {% include 'tracks/includes/home_page_track_card.html' %}
+                {% endfor %}
+				</div> 
+        </section>
+    </div>
+{% endblock %}
+

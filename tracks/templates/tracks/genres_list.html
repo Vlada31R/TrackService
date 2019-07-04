@@ -1,0 +1,17 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    Genres - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="post-list container my-3">
+        <h2 class="page-name py-2 my-3 w-75">Genres</h2>
+        {% for genre in genres %}
+            <div class="mb-3 ">
+                <p><a href="{{ genre.get_absolute_url }}">{{ genre.title }}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load auth_extras %}
+{% load i18n %}
+
+
+{% block admin-panel %}
+    {% if user.is_staff or user|has_group:'Admin' %}
+        <a href="/admin/" class="btn btn-outline-info btn-sm mb-2">{% trans 'Admin' %}</a>
+    {% endif %}
+
+    {% if user.is_staff or user|has_group:'Manager' or user|has_group:'Admin'%}
+        <div class="btn-group mb-2">
+            <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                {% trans 'Create' %}
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'track_create_url' %}">{% trans 'Track' %}</a>
+                <a class="dropdown-item" href="{% url 'genre_create_url' %}">{% trans 'Genre' %}</a>
+            </div>
+        </div>
+        {% if admin_panel_UD %}
+            <a href="{{ admin_object.get_update_url }}" class="btn btn-outline-info btn-sm mb-2">{% trans 'Update' %}</a>
+            <a href="{{ admin_object.get_delete_url }}" class="btn btn-outline-danger btn-sm">{% trans 'Delete' %}</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+
+

@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Abel', sans-serif;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+
+    .menu_logo {
+        align-self: center;
+        position: relative;
+    }
+
+    .main-menu > * {
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border: 2px solid transparent;
+        padding: 10px;
+
+        &:hover:not(.dropdown-select) {
+            border-bottom: 2px solid red;
+        }
+    }
+
+    .dropdown-select {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            right: 0;
+            content: "\203A";
+            font-size: 20px;
+            transition: 0.4s all;
+        }
+
+        &:hover:before {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.home-page {
+    @keyframes home-logo_load {
+        0% {
+            visibility: hidden;
+            left: 0;
+            opacity: 0;
+        }
+        100% {
+            visibility: visible;
+            left: 50%;
+            opacity: 1;
+        }
+    }
+    @keyframes main-side_load {
+        from {
+            width: 0;
+        }
+        to {
+            width: 50%;
+        }
+    }
+    @keyframes button-more_load {
+        0% {
+            visibility: hidden;
+            bottom: 0;
+            opacity: 0;
+        }
+        100% {
+            visibility: visible;
+            bottom: 5vh;
+            opacity: 1;
+        }
+    }
+    @keyframes news_load {
+        0% {
+            margin-left: -5vh;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        100% {
+            margin-left: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .home-page__logo-block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        animation: 1s main-side_load;
+        animation-fill-mode: forwards;
+
+        & > .text-logo {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            line-height: 0.8;
+            letter-spacing: 0.5px;
+            animation: 1s home-logo_load;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+            visibility: hidden;
+        }
+
+        .text-logo span {
+            font-size: 55px;
+            letter-spacing: 1vw;
+            font-weight: 500;
+        }
+    }
+    .home_page__example-news-list {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        .news-example {
+            visibility: hidden;
+            width: 90%;
+            height: 65%;
+            align-self: center;
+            animation: 1s news_load;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            .news-card {
+                padding: 5%;
+                margin-bottom: 2vh;
+                box-sizing: border-box;
+                height: 50%;
+                line-height: 1;
+
+                .card-image {
+                    width: 30%;
+                    transition: 0.4s all;
+                    outline: 1px solid black;
+
+                    &:hover {
+                        background: #8e8e95;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .news_desc {
+                .title {
+                    width: 100%;
+                    padding: 1vh 0;
+                    font-weight: bold;
+                    font-size: 22px;
+                    transition: 0.3s all;
+
+                    &:first-letter {
+                        text-transform: uppercase;
+                    }
+
+                    &:hover {
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+                .common_inf {
+                    font-size: 13px;
+                    color: #8e8e95;
+                    font-weight: lighter;
+                }
+                .desc {
+                    width: 100%;
+                    color: #8e8e95;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .button_more {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            visibility: hidden;
+            transform: translate(-50%);
+            animation: 1s button-more_load;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+            background: none;
+        }
+    }
+}
+
+
+.post-image {
+    transition: 0.3s;
+}
+
+.post-image:hover {
+    background: #8e8e95;
+    cursor: pointer;
+}
+
+.post-page header {
+    background: url("https://blog.allo.ua/wp-content/themes/boal/assets/images/bg-single.jpg") center center;
+    line-height: 1;
+}
+
+.post-page header h1 {
+    font-size: 35px;
+    word-spacing: 0.5vw;
+    letter-spacing: 1px;
+}
+
+.post-page header p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #8e8e95;
+}
+
+.post-tags > span {
+    font-size: 16px;
+}
+
+.post-tags a {
+    color: black;
+    font-weight: lighter;
+    transition: 0.3s all;
+    padding: 0 0.5vw;
+}
+
+.post-tags a:hover {
+    color: red;
+}
+
+.post-desc { /*for base full posts*/
+    width: 70%;
+}
+
+.post-body {
+    font-size: 18px;
+}
+
+.page-name {
+    border-bottom: 2px solid red;
+}
+
+.popular-tags {
+    width: 75%;
+    box-sizing: border-box;
+    padding: 3%;
+
+    h4 {
+        font-size: 20px;
+        word-spacing: 1vh;
+        font-weight: 600;
+        margin-bottom: 2%;
+    }
+
+    a {
+        color: #8e8e95;
+        font-size: 16px;
+
+        &:last-of-type:hover {
+            color: white;
+        }
+    }
+}
+
+
+.data_manager {
+    position: fixed;
+    bottom: 3vh;
+    right: 3vw;
+    opacity: 0.3;
+    transition: 0.3s all;
+
+    &:hover {
+        opacity: 1;
+    }
+}

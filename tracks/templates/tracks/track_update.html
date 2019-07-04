@@ -1,0 +1,36 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Edit track' %} - {{ tracks.title|truncatewords:5 }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <form action="{{ tracks.get_update_url }}" method="post" class="mb-4">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="form-group">
+                    {% if field.errors %}
+                        <div class="alert alert-danger">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+
+                    {{ field.label }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-primary" value="Update track">
+        </form>
+    </div>
+    {% block manage %}
+        {% if user.is_authenticated %}
+			<div class="data_manager d-flex flex-column">
+				{% block admin-panel %}
+				{% endblock %}
+			</div>
+		{% endif %}
+    {% endblock %}
+{% endblock %}

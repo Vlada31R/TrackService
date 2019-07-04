@@ -1,0 +1,15 @@
+{% extends 'tracks/base_service.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ genre.title|title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="track-list container my-3">
+        <h2 class="page-name py-2 my-3 w-75">{% trans 'Tracks for'%} "{{ genre.title }}" {% trans 'genre' %}</h2>
+        {% for track in genre.tracks.all %}
+            {% include 'tracks/includes/base_track_card.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}
